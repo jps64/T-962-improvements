@@ -17,9 +17,18 @@ extern uint8_t graphbmp[];
 // Amtech 4300 63Sn/37Pb leaded profile
 static const profile am4300profile = {
 	"4300 63SN/37PB", {
-		 50, 50, 50, 60, 73, 86,100,113,126,140,143,147,150,154,157,161, // 0-150s
-		164,168,171,175,179,183,195,207,215,207,195,183,168,154,140,125, // Adjust peak from 205 to 220C
-		111, 97, 82, 68, 54,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0  // 320-470s
+		 50, 50, 50, 50, 50, 50, 60, 73, 86,100,113,126,140,143,147,150, // 0-150s
+		154,157,161,164,168,171,175,179,183,195,207,215,207,195,183,168, // Adjust peak from 205 to 220C
+		154,140,125,111, 97, 82, 68, 54,  0,  0,  0,  0,  0,  0,  0,  0  // 320-470s
+	}
+};
+
+// Chip Quik SMD291AX10 leaded profile
+const profile chipquikaxprofile = {
+	"ChipQuik 291AX10", {
+		 50, 50, 50, 50, 50, 60, 75,100,110,115,120,125,130,135,140,145, // 0-150s
+	        150,150,150,150,150,150,155,160,165,170,175,180,190,200,210,220, // Adjust peak from 205 to 220C
+		230,230,210,180,140, 90, 80, 70, 60, 50, 50, 50, 50, 50, 50,  0  // 320-470s
 	}
 };
 
@@ -35,9 +44,18 @@ static const profile nc31profile = {
 // SynTECH-LF normal temp lead-free profile
 static const profile syntechlfprofile = {
 	"AMTECH SYNTECH-LF", {
-		 50, 50, 50, 50, 60, 70, 80, 90,100,110,120,130,140,149,158,166, // 0-150s
-		175,184,193,201,210,219,230,240,245,240,230,219,212,205,198,191, // Adjust peak from 230 to 249C
-		184,177,157,137,117, 97, 77, 57,  0,  0,  0,  0,  0,  0,  0,  0  // 320-470s
+		 50, 50, 50, 50, 50, 50, 50, 60, 70, 80, 90,100,110,120,130,140, // 0-150s
+		149,158,166,175,184,193,201,210,219,230,240,245,240,230,219,212, // Adjust peak from 230 to 249C
+		205,198,191,184,177,157,137,117, 97, 77, 57,  0,  0,  0,  0,  0  // 320-470s
+	}
+};
+
+// Chip Quik SMD291SNL10 lead-free profile
+const profile chipquiksnlprofile = {
+	"ChipQuik 291SNL10", {
+		 50, 50, 50, 50, 50, 60, 75,100,110,120,130,140,145,150,150,150, // 0-150s
+		150,150,155,160,165,170,175,180,180,180,185,190,195,208,220,230, // Adjust peak from 230 to 249C
+	        240,250,250,200,150,100, 90, 80, 70, 60, 50, 50, 50, 50, 50,  0  // 320-470s
 	}
 };
 
@@ -71,8 +89,10 @@ static ramprofile ee2 = { "CUSTOM #2" };
 
 static const profile* profiles[] = {
 	&syntechlfprofile,
+	&chipquiksnlprofile,
 	&nc31profile,
 	&am4300profile,
+	&chipquikaxprofile,
 #ifdef RAMPTEST
 	&rampspeed_testprofile,
 #endif

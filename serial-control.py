@@ -21,7 +21,7 @@ from time import time
 # settings
 #
 FIELD_NAMES = 'Time,Temp0,Temp1,Temp2,Temp3,Set,Actual,Heat,Fan,ColdJ,Mode'
-TTYs = ('/dev/ttyUSB0', '/dev/ttyUSB1', '/dev/ttyUSB2')
+TTYs = ('/dev/ttyUSB0', '/dev/ttyUSB1', '/dev/ttyUSB2', '/dev/tty.usbserial-A800HCV2')
 BAUD_RATE = 115200
 
 logdir = 'logs/'
